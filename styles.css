@@ -1,0 +1,99 @@
+html {
+    font-size: 16px;
+}
+
+.menu-nav {
+    color: green;
+    border-bottom: solid green 2px;
+}
+
+.navbar {
+    background-color: rgb(230, 228, 228) !important;
+}
+
+nav {
+    font-weight: bold;
+}
+
+main {
+    height: 800px;
+    background-color: white;
+    color: #666;
+    font-weight: bold;
+    max-width: 1080px;
+    margin: auto;
+    display: grid;
+    grid-template-areas: "card_promedio"
+                          "card_dolarhoy"
+                          "card_cronista"
+                          "card_ambito";
+    grid-template-rows: 2fr 1fr 1fr 1fr;
+}
+
+.card_promedio {
+    grid-area: card_promedio;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_promedio>div {
+    text-align: center;
+    width: 80%;
+    height: 70%;
+    border-top: solid 2px green;
+    box-shadow: 0 0 8px #00000021;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.card_dolarhoy {
+    grid-area: card_dolarhoy;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_dolarhoy>div {
+    text-align: center;
+    width: 80%;
+    height: 70%;
+    border-top: solid 2px green;
+    box-shadow: 0 0 8px #00000021;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.card_cronista {
+    grid-area: card_cronista;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_cronista>div {
+    text-align: center;
+    width: 80%;
+    height: 70%;
+    border-top: solid 2px green;
+    box-shadow: 0 0 8px #00000021;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.card_ambito {
+    grid-area: card_ambito;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_ambito>div {
+    text-align: center;
+    width: 80%;
+    height: 70%;
+    border-top: solid 2px green;
+    box-shadow: 0 0 8px #00000021;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

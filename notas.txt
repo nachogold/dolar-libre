@@ -1,0 +1,43 @@
+Issue: muchas veces cuando queremos saber la cotización del dolar blue consultamos en internet. Sin embargo, la fuente que consultamos puede diferir con la que consulta la
+contraparte con la que vamos a negociar (por ej yo consulto dolar hoy, otro consulta ámbito). Esto puede generar discrepancias entre las partes y dificultar el proceso
+de compra-venta de dolar blue.
+
+La idea es construir un sitio que permita visualizar la cotización del dolar blue de las principales fuentes para poder comparar entre ellas todas en un
+mismo lugar y mostrar un promedio.
+
+Luego esto podría expandirse a otras cotizaciones pero por el momento me voy a enfocar en el dolar blue.
+
+Las fuentes de las que voy a sacar la cotización van a ser:
+- Dolar Hoy
+- Cronista
+- Ámbito
+- Consultar si hay otras que también sean usadas para agregar
+
+Por lo que estuve viendo voy a tener que scrapear la cotización del dolar de cada uno de estos sites.
+Mi idea es correr el scrapping (Python) cada x minutos (posiblemente 10 aunque convendría ver cada cuanto se actualiza la data en cada uno de estos sitios
+para plantear eso como limite inferior). Una vez recolectados los resultados, guardarlos en alguna tabla y consultar desde una API para mostrar los 
+valores en el site. 
+
+Mi idea es empezar laburando en el front hasta que avance en el curso para después poner en práctica lo que aprenda de back-end (principalmente armado de 
+bases de dato y explotación de esos datos para enviarlos del servidor al cliente)
+Podría una vez terminado el front ponerme a armar el código de scrapping y almacenamiento de datos en python para por último unir las partes.
+
+
+
+
+--DISEÑO DEL SITE--
+Me imagino un site bastante simple, enfocado en mostrar los datos de la manera más fácil, para no confundir del objetivo.
+Va a ser un one-pager, posiblemente usando Bootstrap para que quede copado y para seguir aprendiendo del framework.
+Para la parte de JS seguro use Vue aunque eso va a venir después.
+
+Ejemplos para chusmear (si bien son conversores de moneda, ver si puedo sacar algún diseño copado):
+https://www.xe.com/currencyconverter/ - me gusta el diseño moderno usando cards. Me imagino teniendo una card con la cotización de cada sitio y arriba de todo una con el promedio
+https://www1.oanda.com/lang/es/currency/converter/ - no me gusta, parece muy anticuado y poco gráfico
+https://www.lumonpay.com/live-exchange-rates/ - muy simple el diseño
+https://dolarhoy.com/ 
+https://www.infodolar.com/
+
+https://getbootstrap.com/docs/4.0/examples/
+
+Me gustaria si se puede meter algun background asi: https://codepen.io/plavookac/pen/QMwObb
+
