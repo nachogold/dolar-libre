@@ -33,6 +33,35 @@ nav {
     filter: invert(19%) sepia(84%) saturate(7144%) hue-rotate(124deg) brightness(99%) contrast(104%);
 }
 
+.dropdown {
+    display: grid;
+    grid-template-columns: 85% 15%;
+    padding: 1rem 1rem !important;
+    min-height: 150px;
+}
+
+.site-desc {
+    grid-column: 1 / 2;
+    padding-right: 0.5rem;
+    margin: auto 0;
+}
+
+.social-net {
+    background-color: #f8f9fa;
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 0.5rem;
+}
+
+.social-net i {
+    margin: auto;
+    font-size: 40px;
+    color: var(--verde);
+}
+
 main {
     height: 800px;
     background-color: var(--blanco);
