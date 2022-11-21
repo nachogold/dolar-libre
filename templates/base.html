@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dólar Libre</title>
-    <link rel="icon" href="img/logo.ico">
+    <link rel="icon" href="{{ url_for('static', filename='img/logo.ico')}}">
     <script src="https://kit.fontawesome.com/46de793693.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
 </head>
 <body>
     <div class="pos-f-t menu-nav">
@@ -31,7 +31,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div>
-          <img src="img/balance-scale-solid.svg" alt="logo" id="logo-nav"> 
+          <img src="{{ url_for('static', filename='img/balance-scale-solid.svg')}}" alt="logo" id="logo-nav"> 
           Dólar Libre
         </div>
         </nav>
@@ -40,29 +40,29 @@
           <div class="card_promedio">
               <div class="card-wrapper">
                 <div class="card-title">Cotización promedio</div>
-                <div class="card-compra">Compra: $180</div>
-                <div class="card-venta">Venta: $185</div>
+                <div class="card-compra">Compra: ${{(df['compra'].loc[df.site == 'promedio'].iloc[0])}}</div>
+                <div class="card-venta">Venta: ${{df['venta'].loc[df.site == 'promedio'].iloc[0]}}</div>
               </div>
           </div>
           <div class="card_dolarhoy">
               <div class="card-wrapper">
                 <div class="card-title">Cotización dolarhoy</div>
-                <div class="card-compra">Compra: $180</div>
-                <div class="card-venta">Venta: $185</div>
+                <div class="card-compra">Compra: ${{(df['compra'].loc[df.site == 'dolarhoy'].iloc[0])}}</div>
+                <div class="card-venta">Venta: ${{(df['venta'].loc[df.site == 'dolarhoy'].iloc[0])}}</div>
               </div>
           </div>
           <div class="card_cronista">
             <div class="card-wrapper">
               <div class="card-title">Cotización Cronista</div>
-              <div class="card-compra">Compra: $180</div>
-              <div class="card-venta">Venta: $185</div>
+              <div class="card-compra">Compra: ${{(df['compra'].loc[df.site == 'cronista'].iloc[0])}}</div>
+              <div class="card-venta">Venta: ${{(df['venta'].loc[df.site == 'cronista'].iloc[0])}}</div>
             </div>
           </div>
           <div class="card_ambito">
             <div class="card-wrapper">
               <div class="card-title">Cotización Ámbito</div>
-              <div class="card-compra">Compra: $180</div>
-              <div class="card-venta">Venta: $185</div>
+              <div class="card-compra">Compra: ${{(df['compra'].loc[df.site == 'ambito'].iloc[0])}}</div>
+              <div class="card-venta">Venta: ${{(df['venta'].loc[df.site == 'ambito'].iloc[0])}}</div>
             </div>
           </div>
       </main>
