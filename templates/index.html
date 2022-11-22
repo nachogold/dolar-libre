@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="120">
     <title>Dólar Libre</title>
     <link rel="icon" href="{{ url_for('static', filename='img/logo.ico')}}">
     <script src="https://kit.fontawesome.com/46de793693.js" crossorigin="anonymous"></script>
@@ -39,7 +40,7 @@
       <main>
           <div class="card_promedio">
               <div class="card-wrapper">
-                <div class="card-title">Cotización promedio</div>
+                <div class="card-title">Cotización promedio {{df['timestamp'].loc[df.site == 'promedio'].iloc[0]}}</div>
                 <div class="card-compra">Compra: ${{(df['compra'].loc[df.site == 'promedio'].iloc[0])}}</div>
                 <div class="card-venta">Venta: ${{df['venta'].loc[df.site == 'promedio'].iloc[0]}}</div>
               </div>
