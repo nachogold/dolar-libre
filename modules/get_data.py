@@ -1,5 +1,5 @@
 #TO DO:
-#AGREGAR LOGS QUE SE ENVÍEN A UN ARCHIVO
+#ADD LOGS
 
 from bs4 import BeautifulSoup
 import requests
@@ -27,8 +27,9 @@ def get_data():
         df_dolarhoy.at[0, 'timestamp'] = current_timestamp
         df_dolarhoy.at[0, 'compra'] = float(valor_compra)
         df_dolarhoy.at[0, 'venta'] = float(valor_venta)
-    except:
+    except Exception as e: 
         print('error dolarhoy')
+        print(e)
 
     try:
         #cronista
@@ -40,8 +41,6 @@ def get_data():
         compra = soup.find("div",class_='buy-value')
         venta = soup.find("div",class_='sell-value')
 
-        venta.text.split('$')#[1].replace(',','.')
-
         valor_compra = compra.text.split('$')[1].replace(',','.')
         valor_venta = venta.text.split('$')[1].replace(',','.')
 
@@ -50,8 +49,9 @@ def get_data():
         df_cronista.at[0, 'timestamp'] = current_timestamp
         df_cronista.at[0, 'compra'] = float(valor_compra)
         df_cronista.at[0, 'venta'] = float(valor_venta)
-    except:
+    except Exception as e: 
         print('error cronista')
+        print(e)
 
     try:
         #ambito
@@ -71,8 +71,9 @@ def get_data():
         df_ambito.at[0, 'timestamp'] = current_timestamp
         df_ambito.at[0, 'compra'] = float(valor_compra)
         df_ambito.at[0, 'venta'] = float(valor_venta)
-    except:
+    except Exception as e: 
         print('error ambito')
+        print(e)
 
     try:
         #calculamos promedio y generamos df final
@@ -88,7 +89,9 @@ def get_data():
         df_promedio.at[0, 'venta'] = float(venta_promedio)
 
         df_final= pd.concat([df_combined, df_promedio], ignore_index=True)
-    except:
+    except Exception as e: 
         print('error armado df_final')
+        print(e)
+
 
     return df_final
