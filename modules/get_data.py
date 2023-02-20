@@ -95,3 +95,5 @@ def get_data():
 
 
     return df_final
+
+get_data()

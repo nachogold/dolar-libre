@@ -10,7 +10,7 @@ views = Blueprint(__name__,"views")
 def update_data():
     print('updating data')
     data = get_data()
-    data.to_csv('dolar-libre/data.csv',index=False)
+    data.to_csv('data.csv',index=False)
 
 #call function first time
 update_data()
@@ -22,6 +22,12 @@ scheduler.start()
 
 @views.route("/")
 def home():
+<<<<<<< HEAD
     return render_template("index.html",df=pd.read_csv('dolar-libre/data.csv')) #pass dataframe as a template variable to use in html
 
 atexit.register(lambda: scheduler.shutdown()) #shutdown scheduler when app exits
+=======
+    return render_template("index.html",df=pd.read_csv('data.csv'))
+
+atexit.register(lambda: scheduler.shutdown())
+>>>>>>> 5ec7d20 (update from server)
