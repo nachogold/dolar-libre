@@ -22,12 +22,6 @@ scheduler.start()
 
 @views.route("/")
 def home():
-<<<<<<< HEAD
-    return render_template("index.html",df=pd.read_csv('dolar-libre/data.csv')) #pass dataframe as a template variable to use in html
-
-atexit.register(lambda: scheduler.shutdown()) #shutdown scheduler when app exits
-=======
     return render_template("index.html",df=pd.read_csv('data.csv'))
 
 atexit.register(lambda: scheduler.shutdown())
->>>>>>> 5ec7d20 (update from server)
